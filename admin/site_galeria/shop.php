@@ -264,19 +264,17 @@ $pagina_ini = ($pagina-1) * $num_paginas;
 
 							
 				
-				echo '<div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item sale">
-                                <div class="product__item__pic set-bg" data-setbg="'.$url_img.'">
-                                    <!-- <span class="label">Sale</span> -->
-                                   
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>'.$row['nombreProducto'].'</h6>
-                                    <a href="shop-details.php?pdto='.$row['productoID'].'" class="add-cart">+ Show More</a>
-                                    
-                                </div>
-                            </div>
-                        </div>';
+                            echo '<div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="product__item sale">
+                                        <div class="product__item__pic" style="width: 100%; height: 250px; overflow: hidden;">
+                                            <img src="'.$url_img.'" alt="'.$row['nombreProducto'].'" style="width: 100%; height: 100%; object-fit: contain; object-position: center;">
+                                        </div>
+                                        <div class="product__item__text">
+                                            <h6>'.$row['nombreProducto'].'</h6>
+                                            <a href="shop-details.php?pdto='.$row['productoID'].'" class="add-cart">+ Show More</a>
+                                        </div>
+                                    </div>
+                                </div>';
 			}
 			echo '</div>';
 		}else{
@@ -374,6 +372,23 @@ $pagina_ini = ($pagina-1) * $num_paginas;
                             background-color: #007bff; /* Fondo para la página activa */
                             color: white; /* Texto blanco en la página activa */
                             pointer-events: none; /* Evita que el enlace de la página activa sea clickeable */
+                        }
+
+
+                        .product__item__pic {
+                            position: relative;
+                            width: 100%;
+                            height: 250px; /* Ajusta la altura según tus necesidades */
+                            overflow: hidden;
+                            background-size: cover;
+                            background-position: center;
+                        }
+
+                        .product__item__pic img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover; /* Cambia a 'contain' si quieres que la imagen se ajuste completamente sin recortarse */
+                            object-position: center;
                         }
 
 

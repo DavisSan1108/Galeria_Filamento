@@ -138,27 +138,27 @@ require_once('conn/conexion.php');
 							?>
                         </ul>
                     </div>
+                    <!-- filepath: c:\wamp64\www\Galeria_Filamento\admin\site_galeria\shop-details.php -->
                     <div class="col-lg-6 col-md-9">
                         <div class="tab-content">
-							<h4><?php echo $nombreProd; ?></h4>
-							<?php
-							$num = 1;
-							foreach($arryImg as $rimg){
-								$active = "";
-								if($num == 1){
-									$active = "active";
-								}
-								echo '
-								<div class="tab-pane '.$active.'" id="tabs-'.$num.'" role="tabpanel">
-                                <div class="product__details__pic__item">
-                                    <img src="/Galeria_Filamento/admin/web/productos/'.$rimg['url'].'" alt="">
-                                </div>
-                            </div>';
-								$num++;
-							}
-							?>
-							
-                            
+                            <h4><?php echo $nombreProd; ?></h4>
+                            <?php
+                            $num = 1;
+                            foreach ($arryImg as $rimg) {
+                                $active = "";
+                                if ($num == 1) {
+                                    $active = "active";
+                                }
+                                echo '
+                                <div class="tab-pane ' . $active . '" id="tabs-' . $num . '" role="tabpanel">
+                                    <div class="product__details__pic__item">
+                                        <img id="zoom-img-' . $num . '" src="/Galeria_Filamento/admin/web/productos/' . $rimg['url'] . '" 
+                                            data-zoom-image="/Galeria_Filamento/admin/web/productos/' . $rimg['url'] . '" alt="">
+                                    </div>
+                                </div>';
+                                $num++;
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -316,6 +316,28 @@ require_once('conn/conexion.php');
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+
+    <script src="js/jquery.elevatezoom.js"></script>
+    <script>
+    $(document).ready(function () {
+        // Inicializar el zoom para cada imagen
+        <?php
+        $num = 1;
+        foreach ($arryImg as $rimg) {
+            echo '$("#zoom-img-' . $num . '").elevateZoom({
+                zoomType: "window", // Tipo de zoom: ventana
+                cursor: "crosshair", // Cursor al pasar el mouse
+                zoomWindowWidth: 400, // Ancho de la ventana de zoom
+                zoomWindowHeight: 400, // Alto de la ventana de zoom
+                zoomWindowPosition: 1, // Posición de la ventana (1 = derecha)
+                zoomWindowOffsetX: 15, // Desplazamiento horizontal para evitar solapamiento
+                scrollZoom: true // Permitir zoom con scroll
+            });';
+            $num++;
+        }
+        ?>
+    });
+</script>
 </body>
 
 </html>
