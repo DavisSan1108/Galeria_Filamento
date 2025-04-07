@@ -257,9 +257,9 @@ $pagina_ini = ($pagina-1) * $num_paginas;
 			echo '<div class="row">';
 			while($row = mysqli_fetch_assoc($con_res)){				
 				if($row['urlImagenProducto'] != ''){
-								$url_img = 'admin/web/productos/'.$row['urlImagenProducto'];
+								$url_img = '/Galeria_Filamento/admin/web/productos/'.$row['urlImagenProducto'];
 							}else{
-								$url_img = 'admin/web/productos/no_img.png';
+								$url_img = '/Galeria_Filamento/admin/web/productos/no_img.png';
 							}
 
 							

@@ -52,6 +52,7 @@
 			if($total_prod != 0){
 				while($row = mysqli_fetch_assoc($result)){
 					//admin/web/sliders/'.$row['urlImagenSlader'].'
+					// echo 'URL de la imagen: admin/web/sliders/'.$row['urlImagenSlader'].'<br>';
 					echo '<div class="hero__items set-bg" data-setbg="img/slide/hero-2.jpg">
 							<div class="container">
 								<div class="row">
@@ -71,7 +72,7 @@
 										
 									</div>
 									<div class="col-sm-6" style="float: left">
-											<img src="admin/web/sliders/'.$row['urlImagenSlader'].'" class="img-fluid" />
+											<img src="/Galeria_Filamento/admin/web/sliders/'.$row['urlImagenSlader'].'" class="img-fluid" />
 									</div>
 								</div>
 								</div>
@@ -135,7 +136,7 @@
 							echo '<div class="col-lg-7 offset-lg-4">
 									<div class="banner__item">
 										<div class="banner__item__pic">
-											<img src="admin/web/productos/'.$rowDis['urlImagenProducto'].'" alt="" class="img-fluid" style="max-width: 450px;">
+											<img src="/Galeria_Filamento/admin/web/productos/'.$rowDis['urlImagenProducto'].'" alt="" class="img-fluid" style="max-width: 450px;">
 										</div>
 										<div class="banner__item__text">
 											<h2> '.$nameDise.' </h2>
@@ -150,7 +151,7 @@
 							echo '<div class="col-lg-5">
 									<div class="banner__item banner__item--middle">
 										<div class="banner__item__pic">
-											<img src="admin/web/productos/'.$rowDis['urlImagenProducto'].'" alt="" class="img-fluid" style="max-width: 450px;">
+											<img src="/Galeria_Filamento/admin/web/productos/'.$rowDis['urlImagenProducto'].'" alt="" class="img-fluid" style="max-width: 450px;">
 										</div>
 										<div class="banner__item__text">
 											<h2> '.$nameDise.' </h2>
@@ -164,7 +165,7 @@
 							echo ' <div class="col-lg-7">
 										<div class="banner__item banner__item--last">
 											<div class="banner__item__pic">
-												<img src="admin/web/productos/'.$rowDis['urlImagenProducto'].'" alt="" class="img-fluid" style="max-width: 450px;">
+												<img src="/Galeria_Filamento/admin/web/productos/'.$rowDis['urlImagenProducto'].'" alt="" class="img-fluid" style="max-width: 450px;">
 											</div>
 											<div class="banner__item__text">
 												<h2> '.$nameDise.' </h2>
@@ -206,7 +207,7 @@
 					while($rowDes = mysqli_fetch_assoc($rDestacado)){
 						echo '<div class="col-lg-4 col-md-6 col-sm-6">
 									<div class="blog__item">
-										<div class="blog__item__pic set-bg" data-setbg="admin/web/productos/'.$rowDes['urlImagenProducto'].'" style="max-width: 360px;"></div>
+										<div class="blog__item__pic set-bg" data-setbg="/Galeria_Filamento/admin/web/productos/'.$rowDes['urlImagenProducto'].'" style="max-width: 360px;"></div>
 										<div class="blog__item__text">
 
 											<h5>'.$rowDes['nombreProducto'].'</h5>

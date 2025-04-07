@@ -129,7 +129,7 @@ require_once('conn/conexion.php');
 								echo '
 								<li class="nav-item">
 									<a class="nav-link '.$active.'" data-toggle="tab" href="#tabs-'.$num.'" role="tab">
-										<div class="product__thumb__pic set-bg" data-setbg="admin/web/productos/'.$rimg['url'].'">
+										<div class="product__thumb__pic set-bg" data-setbg="/Galeria_Filamento/admin/web/productos/'.$rimg['url'].'">
 										</div>
 									</a>
 								</li>';
@@ -151,7 +151,7 @@ require_once('conn/conexion.php');
 								echo '
 								<div class="tab-pane '.$active.'" id="tabs-'.$num.'" role="tabpanel">
                                 <div class="product__details__pic__item">
-                                    <img src="admin/web/productos/'.$rimg['url'].'" alt="">
+                                    <img src="/Galeria_Filamento/admin/web/productos/'.$rimg['url'].'" alt="">
                                 </div>
                             </div>';
 								$num++;
